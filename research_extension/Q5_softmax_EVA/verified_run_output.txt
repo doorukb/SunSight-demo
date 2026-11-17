@@ -1,0 +1,27 @@
+ Evolution seed  Tuning rounds  Selected stage  Training criterion met
+              0              6               2                   False
+              1              1               0                    True
+              2              2               1                    True
+                                        Carbon    Energy  Racial equity  Income equity  ZIPs used  Effective allocated ZIPs  Largest ZIP share (%)
+Evolution seed Policy                                                                                                                             
+0              Q4 deterministic       1.287994  1.194450       1.021839       1.390104     289.00                214.984151               1.598650
+               Q4 network + softmax   1.124993  0.973090       1.115518       1.427202   10210.10               9456.942096               0.013938
+               Retrained softmax EVA  1.553296  0.942193       1.125749       1.528169    3508.08               1512.746125               0.469530
+1              Q4 deterministic       1.597247  1.019123       1.127855       1.543520     377.00                251.165588               1.245250
+               Q4 network + softmax   1.597938  1.016652       1.131306       1.520981    1159.53                315.478471               1.205200
+               Retrained softmax EVA  1.595138  1.019924       1.085154       1.493959    1177.74                293.237837               1.245250
+2              Q4 deterministic       1.577895  1.036872       1.135221       1.560930     347.00                242.822346               1.245250
+               Q4 network + softmax   1.099190  0.965503       1.096467       1.408180   10243.00               9703.934212               0.013412
+               Retrained softmax EVA  1.444962  1.000592       1.056674       1.492561    6524.39               2659.060112               0.204220
+                                        Carbon    Energy  Racial equity  Income equity
+Evolution seed Policy                                                                 
+0              Q4 deterministic       0.000000  0.000000       0.000000       0.000000
+               Q4 network + softmax   0.000229  0.000075       0.000566       0.000843
+               Retrained softmax EVA  0.000063  0.000067       0.000550       0.000730
+1              Q4 deterministic       0.000000  0.000000       0.000000       0.000000
+               Q4 network + softmax   0.000015  0.000022       0.000205       0.000292
+               Retrained softmax EVA  0.000014  0.000016       0.000171       0.000251
+2              Q4 deterministic       0.000000  0.000000       0.000000       0.000000
+               Q4 network + softmax   0.000209  0.000086       0.000625       0.000778
+               Retrained softmax EVA  0.000112  0.000078       0.000611       0.000700
+Repeatability, integer counts, exact budget, capacities and inference agreement passed; nested paths checked above.

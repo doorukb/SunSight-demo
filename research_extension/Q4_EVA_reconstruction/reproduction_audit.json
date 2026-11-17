@@ -1,0 +1,22 @@
+{
+  "status": "Methodological reconstruction; published numerical replication not established",
+  "SunSight_commit": "99588d1696c980075a19abf087c669ae5aa22e4e",
+  "raw_sha256": "bc66fa5a4835a61aa92da9e2415705b66e4abad0272567827ca1be76c9a16971",
+  "neat_python": "0.92",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "EIA_source": "https://www.eia.gov/electricity/monthly/archive/may2025.pdf",
+  "EIA_table": "6.2.B, small-scale PV capacity, all sectors, March 2025 versus March 2024",
+  "EIA_missing_policy": "Alabama excluded; negative net changes in Rhode Island and Missouri clipped to zero",
+  "equity_population": "Existing plus new installations, count balance; Section 6.2 mix interpretation",
+  "training_seeds": [
+    0,
+    1,
+    2
+  ],
+  "primary_figure_seed": 0,
+  "selection": "Global paper-structured truncated lexicase; no NEAT-Population speciation",
+  "native_equity_warning": "Released calc_equity differs from paper Section 4.2",
+  "checkpoint_path": "Models/Neat/models/05-31-25/NEAT_model_lexicase_weighted_5.pkl",
+  "checkpoint_sha256": "11f39150e79304bef68c6ef87c59e04eb93dd768e4231a49a4dbb399027abac1"
+}

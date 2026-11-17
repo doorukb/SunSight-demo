@@ -1,0 +1,27 @@
+{
+  "tiny_state_max_probability_error": 0.0027220024303998835,
+  "tiny_state_simulations": 50000,
+  "training_seeds": [
+    10,
+    11,
+    12,
+    13
+  ],
+  "held_out_deployment_seeds": [
+    20000,
+    20099
+  ],
+  "evolution_seeds": [
+    0,
+    1,
+    2
+  ],
+  "primary_temperature": 0.01,
+  "primary_model_seed": 0,
+  "sampler_law": "Per-ZIP softmax until capacity; exact batched rejection in distribution, subject to floating-point underflow.",
+  "nested_path_seeds": [
+    30000,
+    30099
+  ],
+  "max_tuning_rounds": 6
+}

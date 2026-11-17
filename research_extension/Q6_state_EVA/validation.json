@@ -1,0 +1,37 @@
+{
+  "ZIP_count": 10476,
+  "state_count": 50,
+  "objective_count": 200,
+  "reference_minimum_equity_by_family": [
+    0.3959961710613239,
+    0.5278067933831878
+  ],
+  "checks": [
+    "direct per-state objective agreement",
+    "national carbon/energy additivity",
+    "finite no-new-allocation equity",
+    "reference identity",
+    "exact budget and capacity",
+    "40 cases from 10 states with four families each",
+    "nine distinct epsilon survivors",
+    "selection repeatability",
+    "positive affine scaling invariance",
+    "identical cases do not arbitrarily filter",
+    "invalid subset size rejection"
+  ],
+  "full_primary_30_generation_rerun": "Exact score-vector and sampled-case equality",
+  "all_25_models_native_inference_agreement": true,
+  "all_notebook_cells_executed": true,
+  "final_deployment_seeds": [
+    40000,
+    40099
+  ],
+  "training_evolution_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "data_sha256": "bc66fa5a4835a61aa92da9e2415705b66e4abad0272567827ca1be76c9a16971"
+}

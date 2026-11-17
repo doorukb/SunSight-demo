@@ -1,0 +1,9 @@
+Executed code cell 1
+Executed code cell 2
+Executed code cell 3
+Executed code cell 4
+Executed code cell 5
+Executed code cell 6
+Executed code cell 7
+Executed code cell 8
+All notebook cells executed successfully; results and plots embedded.

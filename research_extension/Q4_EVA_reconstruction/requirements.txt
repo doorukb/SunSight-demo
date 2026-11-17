@@ -1,0 +1,5 @@
+numpy
+pandas
+matplotlib
+neat-python==0.92
+tqdm

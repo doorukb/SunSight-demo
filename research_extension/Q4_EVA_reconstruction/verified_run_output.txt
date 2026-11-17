@@ -1,0 +1,23 @@
+Executing cell 1
+Executing cell 2
+Executing cell 3
+ Seed  Carbon  Energy  Racial equity  Income equity  Budgets dominating all objectives
+    0  1.2880  1.1944         1.0218         1.3901                                  7
+    1  1.5972  1.0191         1.1279         1.5435                                 14
+    2  1.5779  1.0369         1.1352         1.5609                                 16
+Executing cell 4
+Executing cell 5
+Executing cell 6
+Budget, capacity, equity bounds, and native-inference checks passed.
+Executing cell 7
+Released checkpoint ratios using the paper-equation reconstruction:
+Carbon           1.5773
+Energy           0.9730
+Racial equity    0.8354
+Income equity    1.0730
+dtype: float64
+Native toolkit metric ratios for the same allocations:
+Carbon Offset 1.5773454086804972
+Energy Potential 0.9730186369001352
+Racial Equity 0.5978805353518639
+Income Equity 0.7866457511976861

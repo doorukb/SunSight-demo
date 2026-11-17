@@ -1,0 +1,25 @@
+{
+  "SunSight_commit": "99588d1696c980075a19abf087c669ae5aa22e4e",
+  "data_sha256": "bc66fa5a4835a61aa92da9e2415705b66e4abad0272567827ca1be76c9a16971",
+  "scope": "Q4 reconstruction extended with raw-score capacity-aware softmax",
+  "training_seeds": [
+    10,
+    11,
+    12,
+    13
+  ],
+  "endpoint_seeds": [
+    20000,
+    20099
+  ],
+  "nested_path_seeds": [
+    30000,
+    30099
+  ],
+  "temperature": 0.01,
+  "evolution_seeds": [
+    0,
+    1,
+    2
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "source_pin": "99588d1696c980075a19abf087c669ae5aa22e4e",
+  "raw_data_sha256": "bc66fa5a4835a61aa92da9e2415705b66e4abad0272567827ca1be76c9a16971",
+  "states": 50,
+  "ZIPs": 10476,
+  "cases": 200,
+  "sampled_cases": 40,
+  "sampled_states": 10,
+  "placement_temperature": 0.01,
+  "generations": 30,
+  "population": 30,
+  "survivors": 9,
+  "evolution_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "training_placement_seeds": [
+    10,
+    11,
+    12,
+    13
+  ],
+  "exploratory_placement_seeds": [
+    20000,
+    20099
+  ],
+  "final_placement_seeds": [
+    40000,
+    40099
+  ],
+  "reference": "fractional capacity-proportional allocation over all 50 states",
+  "no_eia_values_imputed": true,
+  "modeling_status": "methodological reconstruction and exploratory extension, not verified paper replication",
+  "methods": {
+    "national": "National 4",
+    "state_mean": "State means 4",
+    "state_all": "State 200",
+    "state_subset": "State subset 40",
+    "state_subset_log": "Subset 40 + log score"
+  }
+}
