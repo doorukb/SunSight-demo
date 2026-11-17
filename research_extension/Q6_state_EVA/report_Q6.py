@@ -6,15 +6,15 @@ import matplotlib.pyplot as plt
 from q4_eva import OBJECTIVES
 
 
-def summarize_results(root):
-    root = Path(root)
+def summarize_results(runs, results):
+    runs, results = Path(runs), Path(results)
     endpoint = []
     state = []
     coverage = []
     for mode in ["national", "state_mean", "state_all", "state_subset", "state_subset_log"]:
         for seed in range(5):
-            national = pd.read_csv(root / f"{mode}_national_test_{seed}.csv")
-            local = pd.read_csv(root / f"{mode}_state_test_{seed}.csv")
+            national = pd.read_csv(runs / f"{mode}_national_test_{seed}.csv")
+            local = pd.read_csv(runs / f"{mode}_state_test_{seed}.csv")
             average = local.groupby("State")[OBJECTIVES].mean()
             metrics = national.drop(columns="Deployment seed").mean().to_dict()
             metrics.update({"Mode": mode, "Evolution seed": seed})
@@ -31,8 +31,8 @@ def summarize_results(root):
             average["Evolution seed"] = seed
             state.append(average.reset_index())
             if mode in ["state_all", "state_subset", "state_subset_log"]:
-                subsets = pd.read_csv(root / f"{mode}_subsets_{seed}.csv")
-                events = pd.read_csv(root / f"{mode}_events_{seed}.csv")
+                subsets = pd.read_csv(runs / f"{mode}_subsets_{seed}.csv")
+                events = pd.read_csv(runs / f"{mode}_events_{seed}.csv")
                 counts = subsets.assign(StateIndex=subsets["Case"] // 4).groupby("StateIndex").size().reindex(range(50), fill_value=0) / 4
                 effective = events.loc[events["After"] < events["Before"]].assign(StateIndex=lambda x: x["Case"] // 4).groupby("StateIndex").size().reindex(range(50), fill_value=0)
                 depths = events.groupby(["Generation", "Slot"]).size()
@@ -40,17 +40,17 @@ def summarize_results(root):
     endpoint = pd.DataFrame(endpoint)
     state = pd.concat(state, ignore_index=True)
     coverage = pd.DataFrame(coverage)
-    endpoint.to_csv(root / "per_run_summary.csv", index=False)
-    state.to_csv(root / "state_heldout_means.csv", index=False)
-    coverage.to_csv(root / "selection_diagnostics.csv", index=False)
+    endpoint.to_csv(results / "per_run_summary.csv", index=False)
+    state.to_csv(results / "state_heldout_means.csv", index=False)
+    coverage.to_csv(results / "selection_diagnostics.csv", index=False)
     metrics = endpoint.select_dtypes(include=np.number).columns.drop("Evolution seed")
-    endpoint.groupby("Mode")[metrics].mean().to_csv(root / "five_seed_means.csv")
-    endpoint.groupby("Mode")[metrics].std().to_csv(root / "five_seed_sd.csv")
+    endpoint.groupby("Mode")[metrics].mean().to_csv(results / "five_seed_means.csv")
+    endpoint.groupby("Mode")[metrics].std().to_csv(results / "five_seed_sd.csv")
     return endpoint, state, coverage
 
 
-def plot_results(root, endpoint, state):
-    root = Path(root)
+def plot_results(plots, endpoint, state):
+    plots = Path(plots)
     labels = {"national": "National 4", "state_mean": "State means 4", "state_all": "State 200", "state_subset": "State subset 40", "state_subset_log": "Subset 40 + log score"}
     colors = dict(zip(labels, ["tab:blue", "tab:orange", "tab:green", "tab:red", "tab:purple"]))
     fig, axes = plt.subplots(1, 2, figsize=(11, 4), layout="constrained")
@@ -64,7 +64,7 @@ def plot_results(root, endpoint, state):
         ax.grid(alpha=0.15)
     axes[0].legend(fontsize=8)
     fig.suptitle("National performance and the average state can move in opposite directions | five training seeds")
-    fig.savefig(root / "national_vs_state.png", dpi=180)
+    fig.savefig(plots / "national_vs_state.png", dpi=180)
     plt.show()
     plt.close(fig)
     fig, axes = plt.subplots(2, 2, figsize=(11, 7), layout="constrained")
@@ -77,6 +77,6 @@ def plot_results(root, endpoint, state):
         ax.grid(alpha=0.15)
     axes.flat[0].legend(fontsize=8)
     fig.suptitle("Primary training seed 0 | each curve sorts its own 50 states | 100 deployment draws")
-    fig.savefig(root / "state_distribution.png", dpi=180)
+    fig.savefig(plots / "state_distribution.png", dpi=180)
     plt.show()
     plt.close(fig)

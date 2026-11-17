@@ -7,6 +7,7 @@ import neat
 import numpy as np
 import pandas as pd
 
+import paths  # noqa: F401  (puts the vendored SunSight toolkit on sys.path)
 from Simulation.projections_util import Objective, Projection
 
 
