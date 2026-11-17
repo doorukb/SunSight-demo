@@ -1,8 +1,8 @@
 # Q6: State objectives
 
-Extract the folder, use Python 3.11 or later, and install dependencies with `pip install -r requirements.txt`. Run Q6_state_objectives.ipynb or `python run_Q6.py` from the extracted folder. Git and internet are needed on first use to obtain the pinned SunSight source. The default reruns held-out evaluation using the included locally generated model artifacts. Set `retrain = True` in the notebook or script to retrain all five methods on all five evolutionary seeds. Load only trusted pickle artifacts.
+Use Python 3.11 or later and install dependencies with `pip install -r requirements.txt`. Run Q6_state_objectives.ipynb from this folder, or `python run_Q6.py`. The pinned SunSight toolkit (`../SunSight_Q3`), shared inputs (`../Data`) and shared helpers (`../Utils`) ship with the repository, so no git or internet access is needed. The default reruns held-out evaluation using the included locally generated model artifacts (`Models/`). Set `retrain = True` in the notebook or script to retrain all five methods on all five evolutionary seeds. Load only trusted pickle artifacts.
 
-The notebook expands all new Q6 functions. q4_eva.py and q5_softmax.py contain inherited helpers. methodology.md and results.md contain notebook-ready text and mathematics. Final *_test_*.csv files use seeds 40000–40099; older training logs print the exploratory 20000–20099 diagnostics. Those preliminary numbers are not the final results.
+The notebook expands all new Q6 functions (`../Utils/q6_state_eva.py`); `../Utils/q4_eva.py` and `../Utils/q5_softmax.py` contain inherited helpers. methodology.md and results.md contain notebook-ready text and mathematics. Outputs: `Results/` (summary tables and `Results/runs/` per-run CSVs), `Plots/`, `Logs/` (captured console output). Final `Results/runs/*_test_*.csv` files use seeds 40000–40099; older training logs in `Logs/` print the exploratory 20000–20099 diagnostics. Those preliminary numbers are not the final results.
 
 ## Results
 
